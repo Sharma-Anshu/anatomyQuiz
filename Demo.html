@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anatomy Demo 1</title>
+</head>
+<body>
+<img src="DemoPhoto.png" alt="Demo photo" height="600" width="600"><br><br>
+<label>Fill in the blank?</label><br><br>
+<label>A: </label>
+<input type="text" id="A" name="A"><br><br>
+<label>B: </label>
+<input type="text" name="B"><br><br>
+<label>C: </label>
+<input type="text" name="C"><br><br>
+<label>D: </label>
+<input type="text" name="D"><br><br>
+<label>E: </label>
+<input type="text" name="E"><br><br>
+<input type="button" name="Click" onclick="Corrector()"><br><br>
+<p id="A_solution"></p><br><br>
+<p id="B_solution"></p><br><br>
+<p id="C_solution"></p><br><br>
+<p id="D_solution"></p><br><br>
+<p id="E_solution"></p><br><br>
+</body>
+<script type="text/javascript">
+	function Corrector(){
+		Correction("A","PALATINE PROCESS OF THE MAXILLARY BONE","A_solution")
+		Correction("B","HORIZONTAL PLATE OF THE PALATINE BONE","B_solution")
+		Correction("C","VOMER","C_solution")
+		Correction("D","THE CARTILAGINOUS PART OF THE NASAL SEPTUM","D_solution")
+		Correction("E","CHOANA","E_solution")
+	}
+
+	function Correction(letter, solution, text){
+		if(document.getElementById(letter).value.toLowerCase() == solution.toLowerCase()){
+			document.getElementById(text).innerHTML = "You are Correct."
+		}else{
+			document.getElementById(text).innerHTML = "You are not Correct. The solution is \""+solution.toLowerCase()+"\""
+		}
+	}
+</script>
+<body>
+</html>
